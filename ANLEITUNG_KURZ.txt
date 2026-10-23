@@ -1,0 +1,77 @@
+VETO DIRECTOR 3 - KURZANLEITUNG
+Der schnellste Weg zum Casten mit dem HUD
+
+
+VORAUSSETZUNGEN
+- Windows, CS2 über Steam installiert
+- Veto Director 3 (die .exe, keine Installation nötig)
+
+
+SCHRITT 1 - CS2 VERBINDEN (EINMALIG)
+1. Veto Director 3 starten (Doppelklick auf die .exe).
+   Beim ersten Start zeigt Windows evtl. "Unbekannter Herausgeber":
+   "Weitere Informationen" -> "Trotzdem ausführen".
+2. Links unten auf das Zahnrad (Settings) klicken.
+3. Zeile "CS2-Verbindung (GSI-Config)" -> "Automatisch installieren".
+   Wird CS2 nicht gefunden: "Ordner wählen" und den Ordner
+   ...\Counter-Strike Global Offensive\game\csgo\cfg  auswählen.
+4. CS2 neu starten (falls es schon lief).
+
+
+SCHRITT 2 - TEAMS UND SPIELER ANLEGEN
+Schnellster Weg über Faceit:
+1. Menü "Teams" -> "+Team" -> "Faceit Import".
+2. Faceit-Team-Link einfügen und bestätigen.
+   Team, Logo und alle Spieler werden automatisch angelegt.
+3. Für das zweite Team wiederholen.
+
+Ohne Faceit: "+Team" -> "Manuell erstellen" und Spieler unter "Players" anlegen.
+Wichtig: Jeder Spieler braucht seine Steam-ID (SteamID64), sonst kann das HUD
+ihm keinen Namen und kein Foto zuordnen.
+
+
+SCHRITT 3 - MATCH ERSTELLEN
+1. Menü "Matches" -> "Neues Match".
+2. "Faceit importieren" (Matchroom-Link einfügen)
+   oder "Manuell erstellen" (Team A, Team B, Turniername wählen).
+3. "Match speichern".
+
+
+SCHRITT 4 - HUD STARTEN
+Auf der Matchseite oben "HUD starten" klicken.
+Das HUD öffnet sich als eigenes, transparentes Vollbild-Fenster auf dem Hauptmonitor.
+- Es liegt immer im Vordergrund und lässt Mausklicks durch.
+- CS2 läuft darunter normal weiter.
+- Beenden: "HUD beenden" auf der Matchseite.
+
+
+SCHRITT 5 - CS2 STARTEN UND ZUSCHAUEN
+Das Spiel als Zuschauer/GOTV öffnen (Demo oder Live-Match).
+Sobald Daten ankommen, füllt sich das HUD (Score, Spielerkarten, Minimap ...).
+Die Live-Daten siehst du auch in den Spielerlisten auf der Matchseite.
+
+
+HUD AUFNEHMEN / STREAMEN (OBS)
+Variante A - HUD als eigenes Fenster (nach "HUD starten"):
+  Das HUD ist ein normales Fenster und kann in OBS mit "Fensteraufnahme"
+  zusammen mit dem Spiel aufgenommen werden.
+  Hinweis: Ob die Transparenz mitgenommen wird, hängt vom Aufnahmemodus ab.
+  Am zuverlässigsten ist Variante B.
+Variante B - Browser-Quelle (empfohlen):
+  In OBS Quelle hinzufügen -> "Browser"
+  URL:     http://localhost:3535/huds/default/
+  Größe:   1920 x 1080
+  Über die Spielaufnahme legen. Veto Director muss dabei laufen.
+
+
+MAP-VETO ALS OVERLAY (OPTIONAL)
+- In OBS eine zweite Browser-Quelle: http://localhost:3535/veto  (1920 x 1080)
+- Auf der Matchseite "Als aktiv für Veto-Overlay setzen" klicken.
+- "MapVeto Starten" und Picks/Bans anklicken. Das Overlay zeigt es live.
+Die URL bleibt immer gleich, du wechselst nur das aktive Match.
+
+
+HILFE
+- Keine Live-Daten: cfg installiert? CS2 neu gestartet?
+- HUD zeigt keine Namen: Steam-ID der Spieler eingetragen?
+- Alles Weitere steht in ANLEITUNG_AUSFUEHRLICH.txt.
