@@ -1,0 +1,83 @@
+VETO DIRECTOR 3 - KURZANLEITUNG
+
+
+1. EINRICHTUNG (EINMALIG)
+
+a) CS2-Verbindung (Game State Integration)
+   Automatisch (empfohlen):
+   - Einstellungen -> "CS2-Verbindung (GSI-Config)" -> "Automatisch installieren".
+     Das Tool findet CS2 über Steam und legt die Datei selbst ab.
+     Wird CS2 nicht gefunden, öffnet sich eine Ordnerauswahl (…\game\csgo\cfg).
+   Manuell:
+   - Die Datei gamestate_integration_vetodirector.cfg (liegt als eigener Download beim Release
+     bzw. im Ordner cs2-config) in den CS2-Ordner kopieren:
+     ...\Counter-Strike Global Offensive\game\csgo\cfg\
+     (Beispiel: E:\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\)
+   - CS2 danach neu starten.
+   - Veto Director empfängt die Spieldaten auf Port 3399.
+
+b) Faceit
+   - Der Faceit-Zugang ist im Tool enthalten, du musst nichts einrichten.
+     (Internetverbindung nötig für Faceit-Import und Ergebnis-Sync.)
+
+c) OBS-Browser-Quellen (beides in OBS als "Browser"-Quelle, 1920x1080)
+   - Map-Veto:     http://localhost:3535/veto
+   - Broadcast-HUD: http://localhost:3535/huds/default/
+   Die URLs bleiben immer gleich.
+
+
+2. SPIELER UND TEAMS
+
+- Menü "Teams" -> "+ Team":
+  * "Faceit Import": Faceit-Team-Link einfügen. Team, Logo und alle Spieler werden automatisch angelegt.
+  * "Manuell erstellen": nur der Teamname ist Pflicht.
+- Menü "Players" -> neue Spieler anlegen (nur Gamertag ist Pflicht).
+- Die Steam-ID (SteamID64) bei den Spielern ausfüllen. Darüber ordnet das HUD die Live-Daten den Spielern zu.
+- Auf der Teamseite können Spieler per Suche hinzugefügt oder entfernt werden.
+
+
+3. MATCH ERSTELLEN
+
+- Menü "Matches" -> neues Match: Team A, Team B, Turniername, Veto-Typ wählen.
+  Alternativ per Faceit-Match-Link. Dann sind die Spieler fest, "Aktualisieren" gleicht sie neu ab.
+- Auf der Matchseite siehst du Lineups, Live-Daten und die Buttons im Kopfbereich.
+
+
+4. MAP-VETO
+
+- Auf der Matchseite das Map-Veto starten und Picks/Bans nacheinander eintragen.
+- Der Fortschritt wird gespeichert.
+- Für OBS: Button "Als aktiv für Veto-Overlay setzen" klicken. Das aktive Match
+  (in der Liste mit "Aktiv" markiert) wird in der OBS-Quelle http://localhost:3535/veto angezeigt.
+  Die Quelle in OBS muss dafür nie geändert werden.
+- Karten: Pick = grün, Ban = rot (schwarz/weiß), Decider = gold.
+- Nach dem Veto stehen unter jeder gepickten Map Felder für das Kartenergebnis.
+  Bei Faceit-Matches: "Ergebnisse von Faceit übernehmen" (funktioniert, sobald Maps gespielt sind).
+
+
+5. LIVE-SPIEL UND HUD
+
+- CS2 starten (cfg muss installiert sein) und das Match im Spiel als Zuschauer/GOTV öffnen.
+- In der Matchseite erscheinen die Live-Daten direkt in den Spielerlisten (HP, Armor, Geld, K/D/A, Waffe).
+- Button "HUD starten":
+  * Öffnet ein transparentes Vollbild-HUD über dem Spiel (Hauptmonitor, nicht anklickbar).
+  * Oder in OBS die HUD-Browser-Quelle nutzen (siehe 1c).
+- Das HUD zeigt Top-Bar mit Score und Timer, Spielerkarten, Minimap, Kill-Feed,
+  Sieger-Banner (T von rechts in Orange, CT von links in Blau), MVP-Einblendung und Scoreboard/Timeout-Menü.
+- Teams im HUD folgen der Spielseite (Team 1 = T). Der Seitentausch-Button ist noch nicht in der Oberfläche.
+
+
+6. EIGENE HUD-DESIGNS
+
+- Einstellungen -> HUD-Bibliothek: Vorlage erstellen oder ZIP/Ordner importieren.
+- HTML/CSS der Vorlage lässt sich frei anpassen.
+
+
+7. PROBLEME?
+
+- Keine Live-Daten: cfg im richtigen Ordner? CS2 nach dem Kopieren neu gestartet? Tool läuft?
+- OBS-Quelle leer: Läuft Veto Director? Ist ein Match als "Aktiv" gesetzt?
+- Logos fehlen: beim Team ein Logo hinterlegen.
+- Faceit-Fehlermeldung: Internetverbindung vorhanden? Link korrekt? Maps liefern Ergebnisse erst, wenn sie gespielt wurden.
+- Ports 3399 (GSI) und 3535 (OBS/HUD) dürfen von keinem anderen Programm belegt sein.
+- Die Clean-Version speichert ihre Daten getrennt von der normalen Version.
